@@ -55,23 +55,22 @@ hbs.registerHelper('isOdd', function (index) {
   return index % 2 !== 0;
 });
 
-// MongoDB connection (Render-compatible: No localhost fallback)
+// MongoDB connection (ENV or fallback to localhost mode)
 const mongoURL = process.env.MONGODB_URI;
-if (!mongoURL) {
-  console.error("❌ MONGODB_URI is not set in environment variables!");
-  process.exit(1);
-}
-
-mongoose.connect(mongoURL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => {
-    console.log('✅ MongoDB connected (Render-compatible)');
+if (mongoURL) {
+  mongoose.connect(mongoURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   })
-  .catch((err) => {
-    console.error('❌ MongoDB connection error:', err);
-  });
+    .then(() => {
+      console.log('✅ MongoDB connected (ENV URL)');
+    })
+    .catch((err) => {
+      console.error('❌ MongoDB connection error:', err);
+    });
+} else {
+  console.warn("⚠️ MONGODB_URI not found. Running in localhost mode without DB connection.");
+}
 
 // ===================== INSERT NAVBAR DATA =====================
 /*
