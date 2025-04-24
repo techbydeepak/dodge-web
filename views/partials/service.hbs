@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/static/css/style.css">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<section id="services">
+<div class="row">
+  {{#each services}}
+    {{#if (isInRange @index 0 2)}} <!-- First 3 services for the first row -->
+      <div class="col-md-4 mb-4">
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas {{this.icon}}"></i>
+          </div>
+          <h2>{{this.title}}</h2>
+          <p>{{this.description}}</p>
+          <a href="{{this.link}}" class="service-link">{{this.linkText}}</a>
+        </div>
+      </div>
+    {{/if}}
+  {{/each}}
+</div>
+
+<div class="row">
+  {{#each services}}
+    {{#if (isInRange @index 3 5)}} <!-- Next 3 services for the second row -->
+      <div class="col-md-4 mb-4">
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas {{this.icon}}"></i>
+          </div>
+          <h2>{{this.title}}</h2>
+          <p>{{this.description}}</p>
+          <a href="{{this.link}}" class="service-link">{{this.linkText}}</a>
+        </div>
+      </div>
+    {{/if}}
+  {{/each}}
+</div>
+</section>

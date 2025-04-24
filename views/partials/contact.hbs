@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/static/css/style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+<section id="contact-us">
+<section id="contact_us_section" class="contact-section py-5">
+  <div class="container">
+    <h1 class="contact-heading text-center mb-5">
+      <i class="fas fa-envelope-open-text"></i> Contact Us
+    </h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="/process-contact-form" method="post" class="contact-form">
+
+          <div class="mb-4">
+            <label for="exampleInputEmail1" class="form-label">
+              <i class="fas fa-envelope"></i> Your email address
+            </label>
+            <input
+              name="email"
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              required
+            />
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+
+          <div class="mb-4">
+            <label for="contactNumber" class="form-label">
+              <i class="fas fa-phone-alt"></i> Your contact number
+            </label>
+            <input
+              name="phone"
+              type="number"
+              class="form-control"
+              id="contactNumber"
+              required
+            />
+          </div>
+
+          <div class="form-floating mb-4">
+            <textarea name="query" class="form-control" placeholder="Enter your query here" id="queryField" style="height: 150px" required></textarea>
+            <label for="queryField"><i class="fas fa-comment-dots"></i> Your Query</label>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-danger px-5 py-2 fw-bold">
+              <i class="fas fa-paper-plane"></i> Submit
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>

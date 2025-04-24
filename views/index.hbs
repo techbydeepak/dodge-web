@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Orbitron Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Dodge - Services</title>
+  </head>
+  <body class="bg-dark text-white">
+
+    {{> navbar data=details}}
+    {{> slider slides=slides}}
+
+    <!-- Animated Heading -->
+    <div class="text-center py-5">
+      <h1 class="animated-heading">Services That We Provide</h1>
+    </div>
+
+    <!-- Service Section -->
+    {{> service services=services}}
+
+    {{> banner1 banner=banner}}
+    {{!-- {{> banner2 banner_2=banner_2}} --}}
+
+    {{>about aboutData=aboutData}}
+   
+
+
+{{!--  contact us Section --}}
+  {{> contact contactUs=contactUs}}
+  
+   {{> footer year=currentYear footers=footers}}
+    <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

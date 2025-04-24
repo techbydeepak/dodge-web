@@ -1,0 +1,27 @@
+<section id="gallery">
+
+{{#each banners}}
+
+  <section class="banner-section py-5 {{#if (isOdd @index)}}bg-dark text-white{{/if}}">
+    <div class="container">
+      <div class="row align-items-center {{#if (isOdd @index)}}flex-md-row-reverse{{/if}}">
+        
+        <!-- Content Section -->
+        <div class="col-md-6 text-center {{#if (isOdd @index)}}text-md-end{{else}}text-md-start{{/if}}">
+          <h2 class="banner-title">{{title}}</h2>
+          <p class="banner-text">{{description}}</p>
+          <a href="#" class="btn {{#if (isOdd @index)}}btn-light{{else}}btn-danger{{/if}} mt-3">
+            {{#if (isOdd @index)}}Read Stories{{else}}Explore More{{/if}}
+          </a>
+        </div>
+
+        <!-- Image Section -->
+        <div class="col-md-6 text-center">
+          <img src="{{imageUrl}}" alt="Muscle Car" class="img-fluid banner-image">
+        </div>
+
+      </div>
+    </div>
+  </section>
+{{/each}}
+</section>

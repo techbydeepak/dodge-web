@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  {{#each footers}}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start">
+        <h5 class="footer-title">{{this.title}}</h5>
+        <p class="footer-text">{{this.subtitle}}<br>© {{../year}} All Rights Reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <div class="footer-icons">
+          <a href="#" class="footer-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</footer>
