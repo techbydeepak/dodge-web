@@ -29,8 +29,6 @@ if (process.env.NODE_ENV !== "production") {
   app.use(connectLivereload());
 }
 
-
-
 // Register custom Handlebars helper 'isInRange'
 hbs.registerHelper('isInRange', function (index, start, end) {
   return index >= start && index <= end;
@@ -57,14 +55,22 @@ hbs.registerHelper('isOdd', function (index) {
   return index % 2 !== 0;
 });
 
-// MongoDB connection (with fallback to local database if .env is missing)
-const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/website_tut';
-mongoose.connect(mongoURL)
+// MongoDB connection (Render-compatible: No localhost fallback)
+const mongoURL = process.env.MONGODB_URI;
+if (!mongoURL) {
+  console.error("❌ MONGODB_URI is not set in environment variables!");
+  process.exit(1);
+}
+
+mongoose.connect(mongoURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
   .then(() => {
-    console.log('MongoDB connected');
+    console.log('✅ MongoDB connected (Render-compatible)');
   })
   .catch((err) => {
-    console.error('MongoDB connection error:', err);
+    console.error('❌ MongoDB connection error:', err);
   });
 
 // ===================== INSERT NAVBAR DATA =====================
@@ -160,8 +166,8 @@ Footer.create({
 })
 */
 
-// Start server (use environment variable or default to local port)
+// Start server (Render-compatible port)
 const PORT = process.env.PORT || 5556;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(`🚀 Server started on port ${PORT}`);
 });
