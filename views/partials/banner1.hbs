@@ -1,10 +1,10 @@
 
-<link rel="stylesheet" href="/static/css/style.css">
-<section id="gallery">
+
+
 
 {{#each banners}}
 
-  <section class="banner-section py-5 {{#if (isOdd @index)}}bg-dark text-white{{/if}}">
+  <section id="gallery" class="banner-section py-5 {{#if (isOdd @index)}}bg-dark text-white{{/if}}">
     <div class="container">
       <div class="row align-items-center {{#if (isOdd @index)}}flex-md-row-reverse{{/if}}">
         
@@ -26,4 +26,4 @@
     </div>
   </section>
 {{/each}}
-</section>
+
