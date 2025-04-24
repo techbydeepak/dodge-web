@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js",  // "start" script ko update kiya gaya
-    "build": "echo 'No build step needed for this app'"  // Agar build process nahi hai toh yeh add kiya
+    "start": "node src/app.js",  // "start" 
+    "build": "echo 'No build step needed for this app'"  
   },
   "author": "Deepak Rathour",
   "license": "ISC",
